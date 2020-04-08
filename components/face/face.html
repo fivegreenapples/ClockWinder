@@ -1,0 +1,9 @@
+<div style="position:absolute;width:100%;height:100%;left:0;top:0;">
+<svg ng-attr-width="{{2*$ctrl.radius}}" ng-attr-height="{{2*$ctrl.radius}}" xmlns="http://www.w3.org/2000/svg">
+	<circle ng-attr-cx="{{$ctrl.radius}}" ng-attr-cy="{{$ctrl.radius}}" ng-attr-r="{{$ctrl.radius}}" style="stroke-width:1px;" stroke="black" fill="none" />
+	<path id="major" ng-attr-d="{{'M'+$ctrl.radius+',0 l0,20'}}" style="stroke-width:5px;" stroke="black" fill="none" />
+	<path id="minor" ng-attr-d="{{'M'+$ctrl.radius+',0 l0,10'}}" style="stroke-width:2px;" stroke="black" fill="none" />
+	<use ng-repeat="x in [].constructor(12) track by $index" href="#major" ng-attr-transform="{{'rotate('+(30*$index)+','+$ctrl.radius+','+$ctrl.radius+')'}}"/>
+	<use ng-repeat="x in [].constructor(60) track by $index" href="#minor" ng-attr-transform="{{'rotate('+(6*$index)+','+$ctrl.radius+','+$ctrl.radius+')'}}"/>
+</svg>
+</div>

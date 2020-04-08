@@ -1,0 +1,10 @@
+<div ng-style="{position:'absolute',width:2*$ctrl.radius,height:2*$ctrl.radius,left:$ctrl.left-$ctrl.radius,top:$ctrl.top-$ctrl.radius}">
+<svg ng-attr-width="{{2*$ctrl.radius}}" ng-attr-height="{{2*$ctrl.radius}}" xmlns="http://www.w3.org/2000/svg">
+	<!-- <circle ng-attr-cx="{{$ctrl.radius}}" ng-attr-cy="{{$ctrl.radius}}" ng-attr-r="{{$ctrl.innerInnerRadius}}" style="opacity:0.5" stroke="none" ng-attr-fill="{{$ctrl.col}}" /> -->
+	<g ng-attr-transform="{{'rotate('+($ctrl.angle+$ctrl.startAngle)+','+$ctrl.radius+','+$ctrl.radius+')'}}">
+		<g fill-rule="evenodd" ng-attr-fill="{{$ctrl.col}}" stroke="none" stroke-width="2" ng-attr-transform="{{'translate('+$ctrl.radius+','+$ctrl.radius+')'}}">
+			<path ng-attr-d="{{$ctrl.toothPath}}" />
+		</g>
+	</g>
+</svg>
+</div>

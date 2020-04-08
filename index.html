@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>App</title>
+	<script src="js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="js/vendor/angular-1.7.9.min.js"></script>
+	<script src="js/vendor/moment-with-locales-2.24.0.js"></script>
+	<script src="js/vendor/sockjs-1.1.2.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="components/cog/cog.js"></script>
+	<script src="components/face/face.js"></script>
+	<script src="components/hand/hand.js"></script>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+	<div id="page" ng-controller="mainCtrl">
+
+		<div id="clock" ng-click="toggleRun()">
+			<div id="face">
+				<face:></face:>
+				<span class="numeral one">1</span>
+				<span class="numeral two">2</span>
+				<span class="numeral three">3</span>
+				<span class="numeral four">4</span>
+				<span class="numeral five">5</span>
+				<span class="numeral six">6</span>
+				<span class="numeral seven">7</span>
+				<span class="numeral eight">8</span>
+				<span class="numeral nine">9</span>
+				<span class="numeral ten">10</span>
+				<span class="numeral eleven">11</span>
+				<span class="numeral twelve">12</span>
+				<hand: styl="'hour'" angle="angles.hour"></hand:>
+				<hand: styl="'minute'" angle="angles.minute"></hand:>
+				<hand: ng-if="false" styl="'second'" angle="angles.second"></hand:>
+			</div>
+
+			<cog: col="'blue'" teeth="50" left="450" top="450" start-angle="4" angle="angles.cog6"></cog:>
+			<cog: col="'blue'" teeth="70" left="490" top="213" start-angle="2" angle="angles.cog5"></cog:>
+			<cog: col="'blue'" teeth="50" left="712" top="308" start-angle="-6" angle="angles.second"></cog:>
+			<cog: col="'blue'" teeth="12" left="712" top="308" start-angle="-6" angle="angles.second"></cog:>
+			<cog: col="'red'" teeth="64" left="650" top="450" start-angle="0" angle="angles.cog1"></cog:>
+			<cog: col="'red'" teeth="8" left="650" top="450" start-angle="10.3" angle="angles.cog1"></cog:>
+			<cog: col="'red'" teeth="90" left="450" top="450" start-angle="0" angle="angles.cog2"></cog:>
+			<cog: col="'red'" teeth="10" left="450" top="450" start-angle="0" angle="angles.cog2"></cog:>
+			<cog: col="'green'" teeth="30" left="367" top="450" start-angle="9" angle="angles.cog3"></cog:>
+			<cog: col="'green'" teeth="8" left="367" top="450" start-angle="-7" angle="angles.cog3"></cog:>
+			<cog: col="'green'" teeth="32" left="450" top="450" start-angle="0" angle="angles.cog4"></cog:>
+		</div>
+	</div>
+
+
+</body>
+</html>
