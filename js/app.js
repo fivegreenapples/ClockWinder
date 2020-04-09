@@ -58,6 +58,9 @@ App.controller("mainCtrl", [
 			} else {
 				angle = 2 * (1-beatPortion) * swing;
 			}
+			var angleProportion = angle/swing
+			angleProportion2 = (-Math.cos(angleProportion *  Math.PI) + 1)/2
+			angle = angleProportion2 * swing
 			angle = angle-(swing/2);
 			setAngle("deadbeat", angle);
 			if (angle < -3) {
@@ -78,10 +81,7 @@ App.controller("mainCtrl", [
 			$scope.$digest();
 		}
 
-		$scope.toggleRun = function() {
-			$scope.weight.blocked = !$scope.weight.blocked;
-		}
-
+		$scope.seethrough = true
 		$scope.showSeconds = 1;
 		$scope.weight = {
 			frictionConst: 500, 
