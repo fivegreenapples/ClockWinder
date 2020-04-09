@@ -91,15 +91,14 @@ App.controller("mainCtrl", [
 			velocity:0,
 			shouldBlock:false
 		}
-		var now = new Date();
 		$scope.angles = {
-			second:(now.getSeconds()/60) * 360,
-			minute:((now.getMinutes() + now.getSeconds()/60)/60) * 360,
-			hour:(now.getHours() + (now.getMinutes()/60) + (now.getSeconds()/3600)) * 360/12,
+			second:0,//(now.getSeconds()/60) * 360,
+			minute:0,//((now.getMinutes() + now.getSeconds()/60)/60) * 360,
+			hour:0,//(now.getHours() + (now.getMinutes()/60) + (now.getSeconds()/3600)) * 360/12,
 			cog1:0,
-			cog2:((now.getMinutes() + now.getSeconds()/60)/60) * 360,
+			cog2:0,//((now.getMinutes() + now.getSeconds()/60)/60) * 360,
 			cog3:0,
-			cog4:(now.getHours() + (now.getMinutes()/60) + (now.getSeconds()/3600)) * 360/12,
+			cog4:0,//(now.getHours() + (now.getMinutes()/60) + (now.getSeconds()/3600)) * 360/12,
 			cog5:0,
 			cog6:0,
 			bobbin:0,
@@ -191,6 +190,9 @@ App.controller("mainCtrl", [
 		onAngleChange("cog5", function(angle, delta) {
 			deltaAngle("cog6", delta * -70/50)
 		})
+		var now = new Date();
+		// calc deltaminute angle? bobbin? is deadbeat blocked.
+
 		window.requestAnimationFrame(tick);
 
 	}
