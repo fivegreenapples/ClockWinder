@@ -16,17 +16,25 @@ body {
 
 #clock {
 	position: relative;
-	width:900px;
+	width:1200px;
 	height:900px;
 	border-radius:15px;
 	margin:30px auto;
 	background-color: peru;
 	box-shadow: 0 0 5px black;
 }
+#mask {
+	width:1180px;
+	height:900px;
+	background-color: peru;
+	position: absolute;
+	left:10px;
+	top:0;
+}
 #face {
 	width:800px;
 	height:800px;
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgba(255,255,255,1);
 	position: absolute;
 	left:calc(50% - 400px);
 	top:calc(50% - 400px);
@@ -34,6 +42,9 @@ body {
 	box-shadow: 0 0 5px black;
 }
 
+.seethrough {
+	opacity:0.5;
+}
 .numeral {
 	font-family:serif;
 	font-size:40px;
