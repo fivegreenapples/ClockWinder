@@ -18,10 +18,7 @@ body {
 	position: relative;
 	width:1200px;
 	height:900px;
-	border-radius:15px;
 	margin:30px auto;
-	background-color: peru;
-	box-shadow: 0 0 5px black;
 }
 #mask {
 	width:1180px;
@@ -30,6 +27,10 @@ body {
 	position: absolute;
 	left:10px;
 	top:0;
+	border-radius:15px;
+	box-shadow: 0 0 5px black;
+	transition-property:opacity;
+	transition-duration: 3s;
 }
 #face {
 	width:800px;
@@ -40,10 +41,12 @@ body {
 	top:calc(50% - 400px);
 	border-radius: 50%;
 	box-shadow: 0 0 5px black;
+	transition-property:opacity;
+	transition-duration: 3s;
 }
 
 .seethrough {
-	opacity:0.5;
+	opacity:0.6;
 }
 .numeral {
 	font-family:serif;
