@@ -91,15 +91,15 @@ App.controller("mainCtrl", [
 			velocity:0,
 			shouldBlock:false
 		}
-
+		var now = new Date();
 		$scope.angles = {
-			second:0,
-			minute:0,
-			hour:0,
+			second:(now.getSeconds()/60) * 360,
+			minute:((now.getMinutes() + now.getSeconds()/60)/60) * 360,
+			hour:(now.getHours() + (now.getMinutes()/60) + (now.getSeconds()/3600)) * 360/12,
 			cog1:0,
-			cog2:0,
+			cog2:((now.getMinutes() + now.getSeconds()/60)/60) * 360,
 			cog3:0,
-			cog4:0,
+			cog4:(now.getHours() + (now.getMinutes()/60) + (now.getSeconds()/3600)) * 360/12,
 			cog5:0,
 			cog6:0,
 			bobbin:0,
