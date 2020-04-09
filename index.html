@@ -11,6 +11,9 @@
 	<script src="components/cog/cog.js"></script>
 	<script src="components/face/face.js"></script>
 	<script src="components/hand/hand.js"></script>
+	<script src="components/bobbin/bobbin.js"></script>
+	<script src="components/escapement/escapement.js"></script>
+	<script src="components/deadbeat/deadbeat.js"></script>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/app.css">
 </head>
@@ -35,13 +38,17 @@
 				<span class="numeral twelve">12</span>
 				<hand: styl="'hour'" angle="angles.hour"></hand:>
 				<hand: styl="'minute'" angle="angles.minute"></hand:>
-				<hand: ng-if="false" styl="'second'" angle="angles.second"></hand:>
+				<hand: ng-if="showSeconds" styl="'second'" angle="angles.second"></hand:>
 			</div>
 
 			<cog: col="'blue'" teeth="50" left="450" top="450" start-angle="4" angle="angles.cog6"></cog:>
 			<cog: col="'blue'" teeth="70" left="490" top="213" start-angle="2" angle="angles.cog5"></cog:>
 			<cog: col="'blue'" teeth="50" left="712" top="308" start-angle="-6" angle="angles.second"></cog:>
 			<cog: col="'blue'" teeth="12" left="712" top="308" start-angle="-6" angle="angles.second"></cog:>
+			<deadbeat: radius="240" col="'pink'" left="712" top="-17" start-angle="0" angle="angles.deadbeat"></deadbeat:>
+			<!-- deadbeat radius ? -->
+			<escapement: col="'pink'" teeth="30" left="712" top="308" start-angle="4.7" angle="angles.second"></escapement:>
+			<!-- escapement radius 230 -->
 			<cog: col="'red'" teeth="64" left="650" top="450" start-angle="0" angle="angles.cog1"></cog:>
 			<cog: col="'red'" teeth="8" left="650" top="450" start-angle="10.3" angle="angles.cog1"></cog:>
 			<cog: col="'red'" teeth="90" left="450" top="450" start-angle="0" angle="angles.cog2"></cog:>
@@ -49,6 +56,8 @@
 			<cog: col="'green'" teeth="30" left="367" top="450" start-angle="9" angle="angles.cog3"></cog:>
 			<cog: col="'green'" teeth="8" left="367" top="450" start-angle="-7" angle="angles.cog3"></cog:>
 			<cog: col="'green'" teeth="32" left="450" top="450" start-angle="0" angle="angles.cog4"></cog:>
+			<cog: col="'grey'" teeth="50" left="250" top="650" start-angle="2.5" angle="angles.bobbin"></cog:>
+			<bobbin: col="'grey'" drop="angles.weightDrop" radius="86" left="250" top="650" start-angle="0" angle="angles.bobbin"></bobbin:>
 		</div>
 	</div>
 

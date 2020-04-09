@@ -1,0 +1,19 @@
+<div ng-style="{position:'absolute',width:2*$ctrl.radius+20,height:20*$ctrl.radius,left:$ctrl.left-$ctrl.radius-20,top:$ctrl.top-$ctrl.radius}">
+<svg ng-attr-width="{{2*$ctrl.radius+20}}" ng-attr-height="{{20*$ctrl.radius}}" xmlns="http://www.w3.org/2000/svg">
+	<path ng-attr-d="{{'M25,'+($ctrl.radius+120+$ctrl.drop)+' v'+(-120-$ctrl.drop)}}" stroke="#222" stroke-dasharray="10,3" stroke-width="6"></path>
+	<path ng-attr-d="{{'M25,'+$ctrl.radius+' m0,'+(120+$ctrl.drop)+'h-20 v100 h40 v-100 h-20'}}" stroke="black" fill="goldenrod" stroke-width="1"></path>
+	<g ng-attr-transform="{{'translate(20,0) rotate('+($ctrl.angle+$ctrl.startAngle)+','+$ctrl.radius+','+$ctrl.radius+')'}}">
+		<circle ng-attr-cx="{{$ctrl.radius}}" ng-attr-cy="{{$ctrl.radius}}" ng-attr-r="{{$ctrl.radius}}" stroke="none" ng-attr-fill="{{$ctrl.col}}" />
+		<circle ng-attr-cx="{{$ctrl.radius}}" ng-attr-cy="{{$ctrl.radius}}" ng-attr-r="{{$ctrl.radius-1}}" stroke="black" stroke-width="2" ng-attr-fill="none" />
+		<circle ng-attr-cx="{{$ctrl.radius}}" ng-attr-cy="{{$ctrl.radius}}" ng-attr-r="{{$ctrl.radius-4}}" stroke="black" stroke-width="2" ng-attr-fill="none" />
+		<circle ng-attr-cx="{{$ctrl.radius}}" ng-attr-cy="{{$ctrl.radius}}" ng-attr-r="{{$ctrl.radius-7}}" stroke="black" stroke-width="2" ng-attr-fill="none" />
+		<circle ng-attr-cx="{{$ctrl.radius}}" ng-attr-cy="{{$ctrl.radius}}" ng-attr-r="{{$ctrl.radius-10}}" stroke="black" stroke-width="2" ng-attr-fill="none" />
+		<line ng-attr-x1="{{$ctrl.radius}}" ng-attr-y1="{{$ctrl.radius}}" ng-attr-x2="{{$ctrl.radius}}" ng-attr-y2="10" stroke="black" stroke-width="10" />
+		<line ng-attr-transform="{{'rotate(60,'+$ctrl.radius+','+$ctrl.radius+')'}}" ng-attr-x1="{{$ctrl.radius}}" ng-attr-y1="{{$ctrl.radius}}" ng-attr-x2="{{$ctrl.radius}}" ng-attr-y2="10" stroke="black" stroke-width="10" />
+		<line ng-attr-transform="{{'rotate(120,'+$ctrl.radius+','+$ctrl.radius+')'}}" ng-attr-x1="{{$ctrl.radius}}" ng-attr-y1="{{$ctrl.radius}}" ng-attr-x2="{{$ctrl.radius}}" ng-attr-y2="10" stroke="black" stroke-width="10" />
+		<line ng-attr-transform="{{'rotate(180,'+$ctrl.radius+','+$ctrl.radius+')'}}" ng-attr-x1="{{$ctrl.radius}}" ng-attr-y1="{{$ctrl.radius}}" ng-attr-x2="{{$ctrl.radius}}" ng-attr-y2="10" stroke="black" stroke-width="10" />
+		<line ng-attr-transform="{{'rotate(240,'+$ctrl.radius+','+$ctrl.radius+')'}}" ng-attr-x1="{{$ctrl.radius}}" ng-attr-y1="{{$ctrl.radius}}" ng-attr-x2="{{$ctrl.radius}}" ng-attr-y2="10" stroke="black" stroke-width="10" />
+		<line ng-attr-transform="{{'rotate(300,'+$ctrl.radius+','+$ctrl.radius+')'}}" ng-attr-x1="{{$ctrl.radius}}" ng-attr-y1="{{$ctrl.radius}}" ng-attr-x2="{{$ctrl.radius}}" ng-attr-y2="10" stroke="black" stroke-width="10" />
+	</g>
+</svg>
+</div>
