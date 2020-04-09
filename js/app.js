@@ -50,7 +50,7 @@ App.controller("mainCtrl", [
 
 			// calculate deadbeat
 			var timeSince = timestamp - timeOrigin;
-			var swing = 20;
+			var swing = 15;
 			var beatPortion = (timeSince % 2000) / 2000;
 			var angle;
 			if (beatPortion < 0.5) {
@@ -81,7 +81,7 @@ App.controller("mainCtrl", [
 			$scope.$digest();
 		}
 
-		$scope.seethrough = true
+		$scope.seethrough = false
 		$scope.showSeconds = 1;
 		$scope.weight = {
 			frictionConst: 500, 
@@ -156,14 +156,14 @@ App.controller("mainCtrl", [
 			var secondDelta = delta * -64/12
 			if ($scope.weight.shouldBlock) {
 				var offset = $scope.weight.shouldBlock == "l" ? 0 : 3
-				var currentStep = Math.floor((($scope.angles.second % 360)) / 6);
+				var currentStep = Math.floor((($scope.angles.second)) / 6);
 				var result = $scope.angles.second + secondDelta;
-				var nowStep = Math.floor(((result % 360)) / 6);
+				var nowStep = Math.floor(((result)) / 6);
 				if (nowStep != currentStep) {
 					var actualAngle = (nowStep * 6);
 					var actualDelta = actualAngle - $scope.angles.second;
 					var diff = secondDelta - actualDelta;
-					setAngle("second", actualAngle)
+					setAngle("second", actualAngle%360)
 
 
 					// Fix/fudge gear train
