@@ -1,0 +1,86 @@
+.colors-for-reference {
+	color: rgba(36, 71, 90, 1);
+	color: rgba(72, 169, 166, 1);
+	color: rgba(228, 223, 218, 1);
+	color: rgba(155, 131, 96, 1);
+	color: rgba(193, 102, 107, 1);
+}
+
+body {
+	background-color: rgba(228, 223, 218, 1);
+	color: rgba(36, 71, 90, 1);
+	font-size:16px;
+	font-family: verdana, tahoma, arial, sans-serif;
+	box-sizing: border-box;
+}
+
+#clock {
+	position: relative;
+	width:1200px;
+	height:900px;
+	border-radius:15px;
+	margin:30px auto;
+}
+#face {
+	width:800px;
+	height:800px;
+	position: absolute;
+	left:calc(50% - 400px);
+	top:calc(50% - 400px);
+	border-radius: 50%;
+}
+
+.seethrough {
+	opacity:0.5;
+}
+.numeral {
+	font-family:serif;
+	font-size:40px;
+	position:absolute;
+	left:calc(50% - 50px);
+	top:calc(50% - 20px);
+	color:black;
+	text-align: center;
+	width:100px;
+	display:inline-block;
+	line-height:40px;
+}
+.numeral.one {
+	transform: rotateZ(300deg) translate(350px, 0) rotateZ(-300deg);
+}
+.numeral.two {
+	transform: rotateZ(330deg) translate(350px, 0) rotateZ(-330deg);
+}
+.numeral.three {
+	transform: rotateZ(0deg) translate(350px, 0) rotateZ(-0deg);
+}
+.numeral.four {
+	transform: rotateZ(30deg) translate(350px, 0) rotateZ(-30deg);
+}
+.numeral.five {
+	transform: rotateZ(60deg) translate(350px, 0) rotateZ(-60deg);
+}
+.numeral.six {
+	transform: rotateZ(90deg) translate(350px, 0) rotateZ(-90deg);
+}
+.numeral.seven {
+	transform: rotateZ(120deg) translate(350px, 0) rotateZ(-120deg);
+}
+.numeral.eight {
+	transform: rotateZ(150deg) translate(350px, 0) rotateZ(-150deg);
+}
+.numeral.nine {
+	transform: rotateZ(180deg) translate(350px, 0) rotateZ(-180deg);
+}
+.numeral.ten {
+	transform: rotateZ(210deg) translate(350px, 0) rotateZ(-210deg);
+}
+.numeral.eleven {
+	transform: rotateZ(240deg) translate(350px, 0) rotateZ(-240deg);
+}
+.numeral.twelve {
+	transform: rotateZ(270deg) translate(350px, 0) rotateZ(-270deg);
+}
+.explodedhand {
+	opacity:0.5
+}

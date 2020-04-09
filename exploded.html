@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>App</title>
+	<script src="js/vendor/jquery-3.4.1.min.js"></script>
+	<script src="js/vendor/angular-1.7.9.min.js"></script>
+	<script src="js/vendor/moment-with-locales-2.24.0.js"></script>
+	<script src="js/vendor/sockjs-1.1.2.min.js"></script>
+	<script src="js/exploded.js"></script>
+	<script src="components/cog/cog.js"></script>
+	<script src="components/face/face.js"></script>
+	<script src="components/hand/hand.js"></script>
+	<script src="components/bobbin/bobbin.js"></script>
+	<script src="components/escapement/escapement.js"></script>
+	<script src="components/deadbeat/deadbeat.js"></script>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/exploded.css">
+</head>
+<body>
+
+	<div id="page" ng-controller="mainCtrl">
+
+		<button ng-click="toggleShow('minutehand')">Toggle minutehand</button>
+		<button ng-click="toggleShow('minutesprocket')">Toggle minutesprocket</button>
+		<button ng-click="toggleShow('hourtrain')">Toggle hourtrain</button>
+		<button ng-click="toggleShow('hourhand')">Toggle hourhand</button>
+
+		<button ng-click="toggleShow('minutewheel')">Toggle minutewheel</button>
+		<button ng-click="toggleShow('secondtrain')">Toggle secondtrain</button>
+		<button ng-click="toggleShow('secondhand')">Toggle secondhand</button>
+
+		<button ng-click="toggleShow('weight')">Toggle weight</button>
+		<button ng-click="toggleShow('pendulum')">Toggle pendulum</button>
+		<button ng-click="toggleShow('escapement')">Toggle escapement</button>
+		<button ng-click="showAll()">Show All</button>
+		<button ng-click="hideAll()">Hide All</button>
+		<br>
+		<button ng-click="changeRunMode(false)">Stop</button>
+		<button ng-click="changeRunMode('minute')">Spin Minute Hand</button>
+		<input ng-model="minutespin" type="number" style="width:50px" />
+		<button ng-click="changeRunMode('weight')">Drop Weight</button>
+		<button ng-click="changeRunMode('tick')">Tick</button>
+
+
+		<div id="clock" style="z-index:-1" >
+
+			<div id="face" ng-class="{seethrough:seethrough}">
+				<hand: ng-show="show.hourhand" left="-560" styl="'hour'" angle="angles.hour"></hand:>
+				<hand: ng-show="show.minutehand" left="-600+205" styl="'minute'" angle="angles.minute"></hand:>
+				<hand: ng-show="show.secondhand" left="444" ng-if="showSeconds" styl="'second'" angle="angles.second"></hand:>
+			</div>
+			<deadbeat: ng-show="show.pendulum" radius="240" col="'magenta'" left="560" top="125" start-angle="0" angle="angles.deadbeat"></deadbeat:>
+			<escapement: ng-show="show.escapement" col="'magenta'" teeth="30" left="560" top="450" start-angle="4.7" angle="angles.second"></escapement:>
+			<cog: ng-show="show.secondtrain" col="'blue'" teeth="50" left="1044" top="450" start-angle="0.8" angle="angles.cog6"></cog:>
+			<cog: ng-show="show.secondtrain" col="'blue'" teeth="70" left="802" top="450" start-angle="3.4" angle="angles.cog5"></cog:>
+			<cog: ng-show="show.secondtrain" col="'magenta'" teeth="50" left="560" top="450" start-angle="-6" angle="angles.second"></cog:>
+			<cog: ng-show="show.secondtrain" col="'magenta'" teeth="12" left="560" top="450" start-angle="-7.5" angle="angles.second"></cog:>
+			<cog: ng-show="show.secondtrain" col="'blue'" teeth="64" left="405" top="450" start-angle="0" angle="angles.cog1"></cog:>
+			<cog: ng-show="show.secondtrain" col="'blue'" teeth="8" left="405" top="450" start-angle="-5" angle="angles.cog1"></cog:>
+			<cog: ng-show="show.minutewheel" col="'red'" teeth="90" left="205" top="450" start-angle="1.65" angle="angles.cog2"></cog:>
+			<cog: ng-show="show.minutesprocket" col="'red'" teeth="10" left="205" top="450" start-angle="0" angle="angles.cog2"></cog:>
+			<cog: ng-show="show.hourtrain" col="'green'" teeth="30" left="122" top="450" start-angle="-1.4" angle="angles.cog3"></cog:>
+			<cog: ng-show="show.hourtrain" col="'green'" teeth="8" left="122" top="450" start-angle="-11" angle="angles.cog3"></cog:>
+			<cog: ng-show="show.hourtrain" col="'green'" teeth="32" left="40" top="450" start-angle="0" angle="angles.cog4"></cog:>
+			<cog: ng-show="show.weight" col="'grey'" teeth="50" left="205" top="733" start-angle="2.5" angle="angles.bobbin"></cog:>
+			<bobbin: ng-show="show.weight" col="'grey'" drop="angles.weightDrop+50" radius="86" left="205" top="733" start-angle="0" angle="angles.bobbin"></bobbin:>
+
+
+		</div>
+	</div>
+
+
+</body>
+</html>
