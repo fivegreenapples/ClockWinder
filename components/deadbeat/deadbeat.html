@@ -1,9 +1,9 @@
 <div ng-style="{position:'absolute',width:2*$ctrl.radius,height:20*$ctrl.radius,left:$ctrl.left-$ctrl.radius,top:$ctrl.top-$ctrl.radius}">
 <svg ng-attr-width="{{2*$ctrl.radius}}" ng-attr-height="{{20*$ctrl.radius}}" xmlns="http://www.w3.org/2000/svg">
 	<g ng-attr-transform="{{'rotate('+($ctrl.angle+$ctrl.startAngle)+','+$ctrl.radius+','+$ctrl.radius+')'}}">
-		<path ng-attr-d="{{'M'+$ctrl.radius+','+$ctrl.radius+' h-5 v1100 h10 v-1100 z'}}" stroke="black" ng-attr-fill="goldenrod"/>
+		<path ng-attr-d="{{'M'+$ctrl.radius+','+$ctrl.radius+' h-5 v950 h10 v-950 z'}}" stroke="black" ng-attr-fill="goldenrod"/>
 		<path ng-attr-d="{{$ctrl.data}}" ng-attr-fill="{{$ctrl.col}}"/>
-		<circle ng-attr-cx="{{$ctrl.radius}}" ng-attr-cy="{{1300}}" ng-attr-r="{{$ctrl.radius/5}}" stroke="black" ng-attr-fill="goldenrod" />
+		<circle ng-attr-cx="{{$ctrl.radius}}" ng-attr-cy="{{1100}}" ng-attr-r="{{$ctrl.radius/5}}" stroke="black" ng-attr-fill="goldenrod" />
 	</g>
 </svg>
 </div>

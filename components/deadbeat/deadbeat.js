@@ -52,11 +52,11 @@ App.component("deadbeat:", {
 
         var angleA = 100;
         var angleB = 132.4;
-        var angleC = 137.9;
+        var angleC = 137;
         var angleD = 110;
         var angleCR = 132.0;
-        var angleBR = 137.5;
-        var angleCheck = 135;
+        var angleBR = 135.5;
+        var angleCheck = 137.5;
 
         $ctrl.leftA = cartesianFromRadial(outerR, 360-angleA, $ctrl.radius, $ctrl.radius)
         $ctrl.leftB = cartesianFromRadial(outerR, 360-angleB, $ctrl.radius, $ctrl.radius)

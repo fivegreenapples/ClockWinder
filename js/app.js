@@ -172,6 +172,7 @@ App.controller("mainCtrl", [
 					$scope.angles.cog3 += -diff * -12/64 * -8/90 * -10/30
 					$scope.angles.cog4 += -diff * -12/64 * -8/90 * -10/30 * -8/32
 					$scope.angles.hour += -diff * -12/64 * -8/90 * -10/30 * -8/32
+					$scope.angles.bobbin += -diff * -12/64 * -8/90 * -95/50
 
 
 					$scope.weight.blocked = true;

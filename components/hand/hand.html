@@ -1,6 +1,6 @@
-<div style="position:absolute;width:100%;height:100%;left:0;top:0;">
+<div style="position:absolute;width:100%;height:100%;top:0;" ng-style="{left:$ctrl.left}">
 <svg ng-attr-width="{{2*$ctrl.radius}}" ng-attr-height="{{2*$ctrl.radius}}" xmlns="http://www.w3.org/2000/svg">
-	<g ng-attr-transform="{{'rotate('+$ctrl.angle+','+$ctrl.radius+','+$ctrl.radius+')'}}" style="opacity: 1;">
+	<g ng-attr-transform="{{'rotate('+$ctrl.angle+','+$ctrl.radius+','+$ctrl.radius+')'}}" class="explodedhand">
 		<path ng-if="$ctrl.styl=='hour'" ng-attr-transform="{{'translate('+$ctrl.radius+','+$ctrl.radius+')'}}" ng-attr-d="{{'M0,50 L-25,0, L0,'+(-$ctrl.radius*0.75)+' L25,0 z'}}" stroke="black" fill="silver" stroke-width="4" />
 		<path ng-if="$ctrl.styl=='minute'" ng-attr-transform="{{'translate('+$ctrl.radius+','+$ctrl.radius+')'}}" ng-attr-d="{{'M0,90 L-20,0, L0,'+(-$ctrl.radius*0.95)+' L20,0 z'}}" stroke="black" fill="silver" stroke-width="4" />
 		<path ng-if="$ctrl.styl=='second'" ng-attr-transform="{{'translate('+$ctrl.radius+','+$ctrl.radius+')'}}" ng-attr-d="{{'M0,80 L-8,30 L-8,0 L0,'+(-$ctrl.radius*0.85)+' L8,0 L8,30 z'}}" stroke="none" fill="red" />

@@ -1,6 +1,7 @@
 App.component("hand:", {
 
 	bindings: {
+		left: "<",
 		styl: "<",
 		angle: "<",
 	},
