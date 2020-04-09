@@ -159,9 +159,22 @@ App.controller("mainCtrl", [
 				var currentStep = Math.floor((($scope.angles.second % 360)) / 6);
 				var result = $scope.angles.second + secondDelta;
 				var nowStep = Math.floor(((result % 360)) / 6);
-				console.log(currentStep,nowStep)
 				if (nowStep != currentStep) {
-					setAngle("second", (nowStep * 6))
+					var actualAngle = (nowStep * 6);
+					var actualDelta = actualAngle - $scope.angles.second;
+					var diff = secondDelta - actualDelta;
+					setAngle("second", actualAngle)
+
+
+					// Fix/fudge gear train
+					$scope.angles.cog1 += -diff * -12/64
+					$scope.angles.cog2 += -diff * -12/64 * -8/90
+					$scope.angles.minute += -diff * -12/64 * -8/90
+					$scope.angles.cog3 += -diff * -12/64 * -8/90 * -10/30
+					$scope.angles.cog4 += -diff * -12/64 * -8/90 * -10/30 * -8/32
+					$scope.angles.hour += -diff * -12/64 * -8/90 * -10/30 * -8/32
+
+
 					$scope.weight.blocked = true;
 				} else {
 					deltaAngle("second", secondDelta)
